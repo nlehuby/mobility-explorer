@@ -1,25 +1,16 @@
 <div id="sidebar" class="collapse in col-md-4">
   <div class="col-xs-12 no-padding center">
-    <a href="https://mapzen.com/"><div class="mapzen-logo"></div></a>
+    <a href="https://mapzen.com/"><div class="mapzen-logo"></div></a>Jungle Track
   </div>
-  <div class="col-xs-12 no-padding">
-    {{#link-to 'index' (query-params bbox=leafletBbox onestop_id=null served_by=null operated_by=null serves=null isochrone_mode=null pin=pin trace=null)}}<h1>Mobility Explorer</h1>{{/link-to}}
-  </div>
+
   {{#if media.isMobile}}
     {{#unless textboxIsClosed}}
       {{text-box route="index" action="setTextBoxClosed"}}
     {{/unless}}
   {{/if}}
-  {{sidebar-title-transitland}}
-  <div class="btn-group-vertical" role="group" >
-    {{#link-to 'routes' (query-params bbox=bbox onestop_id=null operated_by=null pin=pin style_routes_by=null pin=pin serves=null trace=null)}}<button class="btn btn-transparent-alt">Show Routes</button>{{/link-to}}
-    {{#link-to 'stops' (query-params bbox=bbox onestop_id=null isochrone_mode=null pin=pin trace=null)}}<button class="btn btn-transparent-alt">Show Stops</button>{{/link-to}}
-    {{#link-to 'operators' (query-params bbox=bbox pin=pin onestop_id=null trace=null)}}<button class="btn btn-transparent-alt">Show Operators</button>{{/link-to}}
-  </div>
+
   <hr class="sidebar-hr">
-    {{sidebar-title-mobility}}
     <div class="btn-group-vertical" role="group" >
-    {{#link-to 'isochrones' (query-params bbox=bbox pin=pin onestop_id=null isochrone_mode=null trace=null)}}<button class="btn btn-transparent-alt">Generate Isochrones</button>{{/link-to}}
       {{#link-to 'map-matching' (query-params bbox=bbox pin=pin trace=null)}}<button class="btn btn-mapzen-alt">Try Map Matching</button>{{/link-to}}
     <div class="expanded-selection">
       {{#unless trace}}
@@ -236,7 +227,7 @@
                 </table>
               </div>
             {{/if}}
-            
+
             <a href="{{josmLink}}" target="_blank">Load route in JOSM</a>
             <div class="fa fa-question-circle">{{#popover-on-element class="tooltip-on-sidebar" event="click"}}Open JOSM, and click on the link to load the matched ways.{{/popover-on-element}}</div>
 
